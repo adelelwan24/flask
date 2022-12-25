@@ -8,10 +8,10 @@ DEBUG = True
 
 # Connect to the database
 userName = 'postgres'
-password = '01003347700'
-host = 'localhost'
-port = 5000
-dbName = 'semantic'
+password = '8MzbENHeFZ9yTQT7YllH'
+host = 'containers-us-west-93.railway.app'
+port = '6082'
+dbName = 'railway'
 
 # IMPLEMENT DATABASE URL
 SQLALCHEMY_DATABASE_URI = f'postgresql+psycopg2://{userName}:{password}@{host}:{port}/{dbName}'
