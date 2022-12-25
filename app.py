@@ -43,9 +43,9 @@ moment = Moment(app)
 db.init_app(app)
 
 # # used once to create the tables in the database shouldn't be used again
-# with app.app_context():
-#     db.create_all()
-#     print("All tables are created")
+with app.app_context():
+    db.create_all()
+    print("All tables are created")
 
 def save_to_vdb(user_id, embed, text):
     index_query_stats = query_index.describe_index_stats()
