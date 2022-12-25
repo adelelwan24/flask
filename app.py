@@ -2,7 +2,7 @@ import cohere
 import pinecone
 import numpy as np
 
-from flask import Flask, render_template, request, Response, flash, redirect, url_for, jsonify, session, current_app, send_from_directory
+from flask import Flask, render_template, request, Response, flash, redirect, url_for, jsonify, session, current_app,send_from_directory
 from flask_moment import Moment
 from flask_bcrypt import Bcrypt
 import os
@@ -36,7 +36,7 @@ def Connect_pinecone_index(PIENCONE_API_KEY, INDEX_NAME):
 query_index = Connect_pinecone_index(PIENCONE_API_KEY_QUERY_INDEX, index_query_name)
 index = Connect_pinecone_index(PIENCONE_API_KEY_INDEX, index_name)
 
-app = Flask(__name__, static_folder='react_app/build')
+app = Flask(__name__, static_folder='react/build')
 app.config.from_object('config')
 bcrypt = Bcrypt(app)
 moment = Moment(app)
