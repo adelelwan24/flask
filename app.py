@@ -36,7 +36,7 @@ def Connect_pinecone_index(PIENCONE_API_KEY, INDEX_NAME):
 query_index = Connect_pinecone_index(PIENCONE_API_KEY_QUERY_INDEX, index_query_name)
 index = Connect_pinecone_index(PIENCONE_API_KEY_INDEX, index_name)
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='react_app/build')
 app.config.from_object('config')
 bcrypt = Bcrypt(app)
 moment = Moment(app)
@@ -117,6 +117,15 @@ def update_rec(app ,embed , user_id):
                     print(f"There is an Exception in creating rec: ".center(FORMAT_PRINT_WIDTH, "=") + "\n" + str(e))
                     db.session.rollback()
 
+# Serve React App
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def serve(path):
+    if path != "" and os.path.exists(app.static_folder + '/' + path):
+        return send_from_directory(app.static_folder, path)
+    else:
+        return send_from_directory(app.static_folder, 'index.html')                    
+                    
 @app.route('/query', methods=["POST"])
 def query():
     data = request.get_json()
