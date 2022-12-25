@@ -2,7 +2,7 @@ import cohere
 import pinecone
 import numpy as np
 
-from flask import Flask, render_template, request, Response, flash, redirect, url_for, jsonify, session, current_app
+from flask import Flask, render_template, request, Response, flash, redirect, url_for, jsonify, session, current_app, send_from_directory
 from flask_moment import Moment
 from flask_bcrypt import Bcrypt
 import os
