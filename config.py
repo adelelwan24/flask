@@ -14,6 +14,7 @@ port = '6082'
 dbName = 'railway'
 
 # IMPLEMENT DATABASE URL
-SQLALCHEMY_DATABASE_URI = f'postgresql+psycopg2://{userName}:{password}@{host}:{port}/{dbName}'
+#  f'postgresql+psycopg2://{userName}:{password}@{host}:{port}/{dbName}'
+SQLALCHEMY_DATABASE_URI = "postgresql+psycopg2://postgres:aQapJtzcUsunM2MCpvvK@containers-us-west-74.railway.app:6145/railway"
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 # SQLALCHEMY_ECHO = True
